@@ -281,8 +281,8 @@ export const MyField: Field = {
   type: 'text',
   name: 'myField',
   // highlight-start
-  validate: (val, { user }) =>
-    Boolean(user) || 'You must be logged in to save this field',
+  validate: (val, { req }) =>
+    Boolean(req.user) || 'You must be logged in to save this field',
   // highlight-end
 }
 ```
